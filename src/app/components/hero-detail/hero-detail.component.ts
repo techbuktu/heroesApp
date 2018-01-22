@@ -4,6 +4,7 @@ import {Hero} from '../../classes/hero';
 
 //Import the Service classes to inject and use in this component
 import { HeroService } from '../../services/hero.service';
+import { MessageService } from '../../services/message.service';
 
 
 
@@ -15,7 +16,9 @@ import { HeroService } from '../../services/hero.service';
 export class HeroDetailComponent implements OnInit {
   @Input() hero:Hero;
 
-  constructor() { }
+  constructor(public messageService:MessageService, private heroService:HeroService) { 
+    
+  }
 
   ngOnInit() {
     console.log(this.hero);

@@ -10,6 +10,8 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 
 // Import the Service classes of the heroesApp
 import { HeroService } from './services/hero.service';
+import { MessageService } from './services/message.service';
+
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { HeroService } from './services/hero.service';
   imports: [
     BrowserModule, FormsModule,
   ],
-  providers: [HeroService,],
+  providers: [HeroService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

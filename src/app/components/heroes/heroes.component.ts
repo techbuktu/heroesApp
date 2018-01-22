@@ -4,6 +4,8 @@ import { HEROES } from '../../mock-data/heroes.data';
 
 //Import the Service classes to inject and use in this component
 import { HeroService } from '../../services/hero.service';
+import { MessageService } from '../../services/message.service';
+
 
 
 @Component({
@@ -21,8 +23,8 @@ export class HeroesComponent implements OnInit {
     name: 'Windstorm'
   }
 
-  constructor() { 
-
+  constructor(public messageService:MessageService, private heroService:HeroService) { 
+    
   }
 
   ngOnInit() {
