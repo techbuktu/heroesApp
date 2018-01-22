@@ -11,6 +11,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 // Import the Service classes of the heroesApp
 import { HeroService } from './services/hero.service';
 import { MessageService } from './services/message.service';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 
@@ -18,7 +19,8 @@ import { MessageService } from './services/message.service';
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule, FormsModule,
