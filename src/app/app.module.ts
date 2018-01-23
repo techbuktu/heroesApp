@@ -12,6 +12,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { HeroService } from './services/hero.service';
 import { MessageService } from './services/message.service';
 import { MessagesComponent } from './components/messages/messages.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -20,7 +21,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule, FormsModule,AppRoutingModule,
