@@ -13,6 +13,10 @@ const routes:Routes = [
         pathMatch: 'full'
     },
     {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+    },
+    {
         path: 'heroes',
         component: HeroesComponent
     },

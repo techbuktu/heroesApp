@@ -16,8 +16,6 @@ import { MessageService } from '../../services/message.service';
 export class HeroesComponent implements OnInit {
   heroes = HEROES;
 
-  selectedHero: Hero;
-
   constructor(public messageService:MessageService, private heroService:HeroService) { 
 
   }
@@ -35,8 +33,5 @@ export class HeroesComponent implements OnInit {
     )
   }
 
-  onSelect(hero:Hero):void {
-    this.selectedHero = hero;
-  }
 
 }
