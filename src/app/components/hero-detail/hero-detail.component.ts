@@ -17,11 +17,11 @@ export class HeroDetailComponent implements OnInit {
   @Input() hero:Hero;
 
   constructor(public messageService:MessageService, private heroService:HeroService) { 
-    
+
   }
 
   ngOnInit() {
-    console.log(this.hero);
+    //console.log(this.hero);
   }
 
 }
