@@ -6,6 +6,9 @@ import {Hero} from '../../classes/hero';
 import { HeroService } from '../../services/hero.service';
 import { MessageService } from '../../services/message.service';
 
+//Import routing classes for use with detail views.
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -14,14 +17,21 @@ import { MessageService } from '../../services/message.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero:Hero;
+  hero:Hero;
 
-  constructor(public messageService:MessageService, private heroService:HeroService) { 
-
+  constructor(public messageService:MessageService, private heroService:HeroService, private route: ActivatedRoute, private locatiom: Location) { 
+    
   }
 
   ngOnInit() {
-    //console.log(this.hero);
+    this.getHero();
+  }
+
+  getHero():void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id).subscribe(
+    hero => this.hero =hero
+    )
   }
 
 }
