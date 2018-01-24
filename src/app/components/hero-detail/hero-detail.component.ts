@@ -19,7 +19,7 @@ import { Location } from '@angular/common';
 export class HeroDetailComponent implements OnInit {
   hero:Hero;
 
-  constructor(public messageService:MessageService, private heroService:HeroService, private route: ActivatedRoute, private locatiom: Location) { 
+  constructor(public messageService:MessageService, private heroService:HeroService, private route: ActivatedRoute, private location: Location) { 
     
   }
 
@@ -30,8 +30,14 @@ export class HeroDetailComponent implements OnInit {
   getHero():void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id).subscribe(
-    hero => this.hero =hero
+    hero => {
+      this.hero = hero;
+    }
     )
+  }
+
+  goBack():void {
+    this.location.back();
   }
 
 }
