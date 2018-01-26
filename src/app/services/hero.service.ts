@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders }  from '@angular/common/http';
 //Import the Hero class and the mock heroes data
 import { Hero } from '../classes/hero';
 import { HEROES } from '../mock-data/heroes.data';
@@ -16,8 +16,12 @@ import { of } from 'rxjs/observable/of';
 export class HeroService {
 
 
-  constructor(private messageService:MessageService) { 
+  constructor(private messageService:MessageService, private http: HttpClient) { 
 
+  }
+  
+  private log(message:string){
+    this.messageService.add('HeroService: ' + message);
   }
 
   getHeroes(): Observable<Hero[]> {
