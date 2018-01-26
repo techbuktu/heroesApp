@@ -27,7 +27,10 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl).pipe(
+    return this.http.get<Hero[]>(this.heroesUrl)
+    .pipe( 
+        // If the API response was a success, note it using the log() method.
+        tap(heroes => this.log('fetched heroes')),
         catchError(this.handleError('getHeroes', []))
       );
     //Todo: send the message __after__ fetching the heroes.
@@ -35,10 +38,17 @@ export class HeroService {
     
   }
 
+  /* GET hero by id. Will 404 if id is not found.*/
   getHero(id: number): Observable<Hero>{
-    //Todo: send the message after fetching the hero
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(HEROES.find(hero => hero.id === id));    
+    //const tutorial_url = '${this.heroesUrl}/${id}';
+    const url = this.heroesUrl + '/'+id
+   
+
+    return this.http.get<Hero>(url)
+      .pipe(
+        tap(_ => this.log('fetched hero id=${id}')),
+        catchError(this.handleError<Hero>('getHero id=${id}'))
+      );
   }
   
   /**
