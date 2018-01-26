@@ -19,15 +19,17 @@ export class HeroService {
   constructor(private messageService:MessageService, private http: HttpClient) { 
 
   }
-  
+  private heroesUrl = 'api/heroes'; //Heroes API URL endpoint 
+
   private log(message:string){
     this.messageService.add('HeroService: ' + message);
   }
 
   getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.heroesUrl)
     //Todo: send the message __after__ fetching the heroes.
-    this.messageService.add('HeroService: fetched heroes');
-    return of(HEROES);
+    //this.messageService.add('HeroService: fetched heroes');
+    
   }
 
   getHero(id: number): Observable<Hero>{
