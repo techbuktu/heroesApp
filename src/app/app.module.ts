@@ -18,6 +18,7 @@ import { MessageService } from './services/message.service';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { MessagesComponent } from './components/messages/messages.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 
 
 
@@ -27,7 +28,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule, FormsModule,AppRoutingModule, HttpClientModule, 
