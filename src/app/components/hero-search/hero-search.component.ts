@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//Import the HeroService Injectable for use in queries/searches over the API
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-hero-search',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private heroServicee: HeroService) {
+    
+   }
 
   ngOnInit() {
   }
